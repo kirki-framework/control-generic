@@ -9,6 +9,8 @@
  * @since       2.0
  */
 
+namespace Kirki\Control;
+
 use Kirki\Control\Base;
 
 // Exit if accessed directly.
