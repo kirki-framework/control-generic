@@ -12,6 +12,7 @@
 namespace Kirki\Control;
 
 use Kirki\Control\Base;
+use Kirki\Core\Kirki;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,4 +32,32 @@ class Generic extends Base {
 	 * @var string
 	 */
 	public $type = 'kirki-generic';
+
+	/**
+	 * Enqueue control related scripts/styles.
+	 *
+	 * @access public
+	 */
+	public function enqueue() {
+		parent::enqueue();
+
+		$url = apply_filters(
+			'kirki_package_url_control_generic',
+			trailingslashit( Kirki::$url ) . 'vendor/kirki-framework/control-generic/src'
+		);
+
+		// Enqueue the script.
+		wp_enqueue_script(
+			'kirki-control-generic',
+			"$url/assets/scripts/control.js",
+			[
+				'kirki-script',
+				'jquery',
+				'customize-base',
+				'kirki-dynamic-control',
+			],
+			KIRKI_VERSION,
+			false
+		);
+	}
 }
