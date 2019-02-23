@@ -103,3 +103,5 @@ kirki.control['kirki-generic'] = {
         control.container.html( template( args ) );
     }
 };
+
+wp.customize.controlConstructor['kirki-generic'] = wp.customize.kirkiDynamicControl.extend( {} );
