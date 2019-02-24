@@ -18,8 +18,18 @@ add_action(
 add_action(
     'customize_controls_print_footer_scripts',
     function() {
-        $path = apply_filters( 'kirki_control_view_generic', __DIR__ . '/view.php' );
+        $path = apply_filters( 'kirki_control_view_generic', __DIR__ . '/view-generic.php' );
         echo '<script type="text/html" id="tmpl-kirki-input-generic">';
+        include $path;
+        echo '</script>';
+    }
+);
+
+add_action(
+    'customize_controls_print_footer_scripts',
+    function() {
+        $path = apply_filters( 'kirki_control_view_textarea', __DIR__ . '/view-textarea.php' );
+        echo '<script type="text/html" id="tmpl-kirki-input-textarea">';
         include $path;
         echo '</script>';
     }
