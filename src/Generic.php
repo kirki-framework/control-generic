@@ -51,7 +51,6 @@ class Generic extends Base {
 			'kirki-control-generic',
 			"$url/assets/scripts/control.js",
 			[
-				'kirki-script',
 				'jquery',
 				'customize-base',
 				'kirki-dynamic-control',
