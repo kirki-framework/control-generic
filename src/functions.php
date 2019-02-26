@@ -20,6 +20,9 @@ class_alias( 'Kirki\Field\Generic', 'Kirki_Field_Generic' );
 class_alias( 'Kirki\Field\Text', 'Kirki_Field_Text' );
 class_alias( 'Kirki\Field\Textarea', 'Kirki_Field_Textarea' );
 class_alias( 'Kirki\Field\URL', 'Kirki_Field_URL' );
+class_alias( 'Kirki\Field\URL', 'Kirki_Field_Link' );
+class_alias( 'Kirki\Field\URL', 'Kirki\Field\Link' );
+
 
 add_action(
     'customize_controls_print_footer_scripts',
